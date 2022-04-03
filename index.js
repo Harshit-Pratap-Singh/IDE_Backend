@@ -43,7 +43,7 @@ app.post("/run", async (req, res) => {
   }
 });
 
-app.listen(PORT, (err) => {
+app.listen(process.env.PORT || PORT, (err) => {
   if (err) console.log(err);
   else console.log("Server running at port==>", PORT);
 });
