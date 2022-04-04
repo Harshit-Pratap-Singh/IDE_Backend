@@ -5,11 +5,7 @@ const PORT = 3000;
 const { generateFile } = require("./generateFile");
 const cors = require("cors");
 
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); //middleware to parse the json body part
 
