@@ -38,7 +38,7 @@ const executeCpp = (filePath, input = "") => {
 
   return new Promise((resolve, reject) => {
     exec(
-      `g++-11 -fconcepts-ts ${filePath} -o ${outPath} && cd ${outputPath} && gtimeout 4s ./${jobId}.out < ${jobId}.txt`,
+      `g++ -std=c++14  ${filePath} -o ${outPath} && cd ${outputPath} && timeout 4s ./${jobId}.out < ${jobId}.txt`,
       { maxBuffer: 1024 * 1024 * 256 },
       (error, stdout, stderr) => {
         removeFile(filePath, outputPath, jobId, "out");
@@ -84,7 +84,6 @@ const removeFolder = async (outPath) => {
 };
 
 const executeJava = (filePath, input = "") => {
-  
   const jobId = path.basename(filePath).split(".")[0];
   console.log("jobId==>", jobId);
 
