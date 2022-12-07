@@ -14,6 +14,8 @@ RUN apt-get install -y python
 # add-apt-repository ppa:webupd8team/java
 # sudo apt-get update
 # sudo apt-get install oracle-java7-installer
+
+#java compiler
 RUN apt install software-properties-common -y
 # RUN add-apt-repository -y ppa:webupd8team/java
 RUN apt update
@@ -22,6 +24,7 @@ RUN  apt install -y default-jdk
 # RUN  apt-get install openjdk-8-jdk
 RUN python3 --version
 
+#c++ compiler
 RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test
 RUN apt install g++
 
